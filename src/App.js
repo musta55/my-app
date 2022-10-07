@@ -4,10 +4,31 @@ import Todos from './myComponents/Todos';
 import Footer from './myComponents/Footer';
 
 function App() {
-  let myVar = 345;
+ const onDelete=(todo) => {
+  console.log('I am on delete of ',todo) ;
+  let index=todos.indexOf(todo)
+ }
+  let todos = [
+    {
+      title: "Go to the market",
+      desc: "You need to go to the market"
+    },
+
+    {
+
+      title: "Go to the school",
+      desc: "You need to go to the school"
+    },
+    {
+
+      title: "Go to the hospital",
+      desc: "You need to go to the hospital"
+    }
+
+  ]
   return (<>
     <Header title="my Todo list" searchBar={false}/>
-    <Todos />
+    <Todos todos={todos} onDelete={onDelete}/>
     <Footer/>
 
   </>
